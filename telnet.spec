@@ -1,7 +1,7 @@
 Name:             telnet
 Epoch:            1
 Version:          0.17
-Release:          75
+Release:          76
 Summary:          Client and Server programs for the Telnet communication protocol
 License:          BSD
 Url:              http://web.archive.org/web/20070819111735/www.hcs.harvard.edu/~dholland/computers/old-netkit.html
@@ -38,6 +38,7 @@ Patch0023:        netkit-telnet-0.17-core-dump.patch
 Patch0024:        netkit-telnet-0.17-gcc7.patch
 Patch0025:        netkit-telnet-0.17-manpage.patch
 Patch0026:        netkit-telnet-0.17-telnetrc.patch
+Patch0027:        CVE-2020-10188.patch
 
 BuildRequires:    gcc-c++ ncurses-devel systemd
 Requires:         systemd
@@ -101,5 +102,11 @@ install -pm644 %{SOURCE3} %{buildroot}%{_unitdir}/telnet.socket
 %{_mandir}/man1/telnet.1*
 
 %changelog
+* Mon Apr 27 2020 openEuler Buildteam <buildteam@openeuler.org> - 1:0.17-76
+- Type:cves
+- ID:CVE-2020-10188
+- SUG:restart
+- DESC:fix CVE-2020-10188
+
 * Sat Sep 14 2019 huzhiyu<huzhiyu1@huawei.com> - 1:0.17-75
 - Package init
