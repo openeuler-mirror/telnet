@@ -1,17 +1,15 @@
 Name:             telnet
 Epoch:            1
 Version:          0.17
-Release:          77
+Release:          78
 Summary:          Client and Server programs for the Telnet communication protocol
 License:          BSD
 Url:              http://web.archive.org/web/20070819111735/www.hcs.harvard.edu/~dholland/computers/old-netkit.html
-Source0:          ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-telnet-0.17.tar.gz
-#sources form fedora/redhat
+Source0:          https://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-telnet-0.17.tar.gz
 Source1:          telnet-client.tar.gz
 Source2:          telnet@.service
 Source3:          telnet.socket
 
-#patches from fedora/redhat repositories
 Patch0001:        telnet-client-cvs.patch
 Patch0002:        telnetd-0.17.diff
 Patch0003:        telnet-0.17-env.patch
@@ -102,6 +100,12 @@ install -pm644 %{SOURCE3} %{buildroot}%{_unitdir}/telnet.socket
 %{_mandir}/man1/telnet.1*
 
 %changelog
+* Tue Dec 15 2020 xihaochen <xihaochen@huawei.com> - 1:0.17-78
+- Type:requirement
+- ID:NA
+- SUG:NA
+- DESC:remove sensitive words 
+
 * Fri Sep 11 2020 lunankun <lunankun@huawei.com> - 1:0.17-77
 - Type:bugfix
 - ID:NA
